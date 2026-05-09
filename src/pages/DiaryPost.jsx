@@ -7,10 +7,9 @@ const DiaryPost = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
 
-//   console.log("id", id);
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get(`http://localhost:4000/api/posts/${id}`);
+      const res = await axios.get(`https://dy2-1.onrender.com/api/posts/${id}`);
       const data = await res.data;
     //   console.log("data", data.post);
       setPost(data.post);

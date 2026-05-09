@@ -9,7 +9,7 @@ const PostHead = ({ post, fetchPosts }) => {
 
   const handleClick = async () => {
 
-    const res = await axios.delete(`http://localhost:4000/api/posts/${post._id}`);
+    const res = await axios.delete(`https://dy2-1.onrender.com/api/posts/${post._id}`);
     const body = await res.data;
     if(body.message == "Data Deleted"){
        toast.success("Data Deleted")

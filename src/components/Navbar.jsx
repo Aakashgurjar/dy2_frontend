@@ -1,41 +1,42 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-// import './Navbar.css';
+
 import Home from "../pages/Home";
 import { UserContext } from "../App";
 import { useContext } from "react";
 
 const Navbar = () => {
-  // console.log("navbar")
-
   const [menuOpen, setMenuOpen] = useState(false);
   const {user, setUser} = useContext(UserContext);
 
+  function handleLogOut(){
+      setUser('');
+      // window.location.reload();
+      console.log("logout")
+  }
+
   return (
-   
     <div className="w-full bg-white shadow-md">
       <header className="flex items-center justify-between px-4 py-3 max-w-7xl mx-auto">
         {/* Logo */}
         <span className="text-xl font-bold text-blue-600">The Diary App</span>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-6 ">
 
           <NavLink
             to="/"
-            className="text-gray-700 hover:text-blue-600 font-medium"
-          >
+            className="text-gray-700 hover:text-blue-600 font-medium" >
             Home
           </NavLink>
-
           {
             user ? (<div>
-             <NavLink to='/logout'> Logout</NavLink>
+             <NavLink to='/login' onClick={handleLogOut}> Logout</NavLink>
           </div>) : (
         
-          <div>  <NavLink
+          <div className="gap-x-4 ">  <NavLink
           to="/login"
-          className="text-gray-700 hover:text-blue-600 font-medium"
+          className="text-gray-700 hover:text-blue-600 font-medium gap-x-3 mx-3 "
         >
           Login
         </NavLink>

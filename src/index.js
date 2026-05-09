@@ -12,16 +12,14 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 root.render(
-  // <React.StrictMode>
-
+  <React.StrictMode>
   <BrowserRouter>
    
       <App />
       <Toaster />
    
   </BrowserRouter>
-
-  // </React.StrictMode>
+  </React.StrictMode>
 );
 
 // export {UserContext}
