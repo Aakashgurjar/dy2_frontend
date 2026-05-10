@@ -18,10 +18,8 @@ const Navbar = () => {
   return (
     <div className="w-full bg-white shadow-md">
       <header className="flex items-center justify-between px-4 py-3 max-w-7xl mx-auto">
-        {/* Logo */}
         <span className="text-xl font-bold text-blue-600">The Diary App</span>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 ">
 
           <NavLink
@@ -50,7 +48,6 @@ const Navbar = () => {
          
         </nav>
 
-        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -74,7 +71,6 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile Navigation Menu */}
       {menuOpen && (
         <div className="md:hidden px-4 pb-3">
           <ul className="space-y-2">

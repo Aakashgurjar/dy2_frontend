@@ -68,16 +68,12 @@ function App() {
       const res = await axios.get("https://dy2-1.onrender.com/profile", {
         withCredentials: true,
       });
-      // console.log("user get in profile", res.data.email);
-      // const email = res.data.email;
+ 
       const { username, email, _id } = await res.data;
       setUser({ username, email, _id });
       console.log("userrrrrrrrrr", email, username, _id, user)
       navigate('/profile');
-      // if (res.data.email) {
-      //   setGoogleEmail(email);
-      //   getDataByEmail(email);
-      // }
+    
     } catch (err) {
       console.log("No session user found", err);
     }
@@ -85,7 +81,6 @@ function App() {
 
   useEffect(() => {
     fetchSessionUser();
-    // If no user in localStorage, try to fetch from session
     if (!user && !localStorage.getItem("user")) {
       fetchSessionUser();
     }
@@ -136,7 +131,6 @@ function App() {
             </OpenRoute>
           ),
         },
-        // { path: '/reset-password:id', element:  < /> },
       ],
     },
   ]);

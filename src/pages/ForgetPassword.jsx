@@ -7,14 +7,12 @@ const ForgetPassword = () => {
   const handleSubmit = async(e) => {
         e.preventDefault();
     try{
-        // console.log("email", email );
         const res = await axios.post(`http://localhost:4000/api/reset-password-token`,{email});
         console.log("res", res );
 
     }catch(err){
         console.log("Error frontend", err)
     }
-    // alert(`Password reset link sent to ${email}`);
   };
 
   return (
